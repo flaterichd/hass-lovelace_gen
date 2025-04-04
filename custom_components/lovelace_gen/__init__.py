@@ -17,6 +17,8 @@ def fromjson(value):
 
 jinja = jinja2.Environment(loader=jinja2.FileSystemLoader("/"))
 
+jinja.policies['json.dumps_kwargs'] = {'sort_keys': False}
+
 jinja.filters['fromjson'] = fromjson
 
 llgen_config = {}
